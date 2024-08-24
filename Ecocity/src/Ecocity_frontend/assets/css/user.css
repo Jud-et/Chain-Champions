@@ -1,0 +1,755 @@
+/* CUSTOM PROPERTY */
+
+:root {
+    /* Colors */
+    --dark-jungle-green: hsl(188, 63%, 7%);
+    --green: hsl(146, 85%, 19%);
+    --raisin-black-1: hsl(227, 29%, 13%);
+    --raisin-black-2: hsl(229, 17%, 19%);
+    --yellow-green: hsl(89, 72%, 45%);
+    --orange: hsl(9, 100%, 62%);
+    --cultured-1: hsl(0, 0%, 93%);
+    --cultured-2: hsl(192, 24%, 96%);
+    --misty-rose: hsl(7, 56%, 91%);
+    --alice-blue: hsl(210, 100%, 97%);
+    --seashell: hsl(8, 100%, 97%);
+    --cadet: hsl(200, 15%, 43%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --opal: hsl(180, 20%, 62%);
+  
+    /* Typography */
+    --ff-nunito-sans: "Nunito Sans", sans-serif;
+    --ff-poppins: "Poppins", sans-serif;
+  
+    --fs-1: 1.875rem;
+    --fs-2: 1.5rem;
+    --fs-3: 1.375rem;
+    --fs-4: 1.125rem;
+    --fs-5: 0.875rem;
+    --fs-6: 0.813rem;
+    --fs-7: 0.75rem;
+  
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+  
+    /* Transition */
+    --transition: 0.25s ease;
+  
+    /* Spacing */
+    --section-padding: 100px;
+  
+    /* Shadow */
+    --shadow-1: 0 5px 20px 0 hsla(219, 56%, 21%, 0.1);
+    --shadow-2: 0 16px 32px hsla(188, 63%, 7%, 0.1);
+  }
+  
+  /* RESET */
+  
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a, img, span, button, ion-icon {
+    display: block;
+  }
+  
+  button {
+    border: none;
+    background: none;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  address {
+    font-style: normal;
+  }
+  
+  ion-icon {
+    pointer-events: none;
+  }
+  
+  html {
+    font-family: var(--ff-nunito-sans);
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: var(--white);
+    overflow-x: hidden;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--white);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--cadet);
+    border-left: 2px solid var(--white);
+  }
+  
+  /* REUSED STYLE */
+  
+  .container {
+    padding-inline: 15px;
+  }
+  
+  button, a {
+    transition: var(--transition);
+  }
+  
+  .h1, .h2, .h3 {
+    color: var(--dark-jungle-green);
+    font-family: var(--ff-poppins);
+    line-height: 1.3;
+  }
+  
+  .h1 {
+    font-size: var(--fs-1);
+    line-height: 1;
+  }
+  
+  .h2 {
+    font-size: var(--fs-2);
+  }
+  
+  .h3 {
+    font-size: var(--fs-4);
+    font-weight: var(--fw-700);
+  }
+  
+  .h3 > a {
+    color: inherit;
+  }
+  
+  .btn {
+    position: relative;
+    background: var(--orange);
+    color: var(--white);
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-5);
+    text-transform: var(--text-transform, capitalize);
+    border: 1px solid var(--orange);
+    padding: 10px 20px;
+    z-index: 1;
+  }
+  
+  .btn:is(:hover, :focus) {
+    background: var(--black);
+    color: var(--dark-jungle-green);
+    border-color: var(--black);
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--white);
+    transition: var(--transition);
+    z-index: -1;
+  }
+  
+  .btn:is(:hover, :focus)::before {
+    width: 100%;
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  
+  .section-subtitle {
+    color: var(--orange);
+    font-size: var(--fs-5);
+    font-weight: var(--fw-600);
+    padding: 5px 20px;
+    background: hsla(9, 100%, 62%, 0.1);
+    width: max-content;
+    border-radius: 50px;
+    margin-inline: auto;
+    margin-bottom: 15px;
+  }
+  
+  .section-title {
+    text-align: var(--text-align, center);
+    margin-bottom: var(--margin-bottom, 50px);
+  }
+  
+  /* HEADER */
+  
+  .header {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .header-top {
+    background: var(--green);
+    padding-block: 15px;
+  }
+  
+  .header-top .container, .header-top-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .header-top .container {
+    gap: 8px 20px;
+  }
+  
+  .header-top-list {
+    gap: 15px;
+  }
+  
+  .header-top-link {
+    color: var(--white);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .header-top-link:is(:hover, :focus) {
+    color: var(--orange);
+  }
+  
+  .header-top-link ion-icon {
+    color: var(--orange);
+    font-size: 15px;
+    --ionicon-stroke-width: 60px;
+  }
+  
+  .header-top .wrapper, .header-top-social-list {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-top .wrapper {
+    gap: 20px;
+  }
+  
+  .header-top-social-list {
+    gap: 8px;
+  }
+  
+  .header-top-social-link {
+    color: var(--white);
+    font-size: 15px;
+  }
+  
+  .header-top-btn {
+    background: var(--orange);
+    color: var(--white);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-700);
+    padding: 4px 15px;
+  }
+  
+  .header-top-btn:is(:hover, :focus) {
+    --orange: hsl(7, 72%, 46%);
+  }
+  
+  .header-bottom {
+    background: var(--white);
+    padding-block: 25px;
+  }
+  
+  .header-bottom .logo img {
+    margin-inline: auto;
+  }
+  
+  .navbar {
+    background: var(--white);
+    position: fixed;
+    top: 0;
+    left: -310px;
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 3px 10px hsla(0, 0%, 0%, 0.3);
+    z-index: 5;
+    padding: 60px 20px;
+    visibility: hidden;
+    transition: 0.15s ease-in;
+  }
+  
+  .navbar.active {
+    visibility: visible;
+    transform: translateX(310px);
+    transition: 0.25s ease-out;
+  }
+  
+  .navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--cultured-1);
+    margin-bottom: 25px;
+  }
+  
+  .navbar-top .logo img {
+    width: 200px;
+  }
+  
+  .nav-close-btn ion-icon {
+    font-size: 20px;
+    --ionicon-stroke-width: 45px;
+    padding: 5px;
+  }
+  
+  .navbar-link {
+    color: var(--cadet);
+    font-size: var(--fs-5);
+    font-weight: var(--fw-600);
+    text-transform: uppercase;
+    padding-block: 15px;
+  }
+  
+  .navbar-link:is(:hover, :focus) {
+    color: var(--orange);
+  }
+  
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: hsla(0, 0%, 0%, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+    z-index: 4;
+  }
+  
+  .overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .header-bottom-actions {
+    background: var(--white);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-block: 15px 10px;
+    box-shadow: -2px 0 30px hsla(237, 71%, 52%, 0.2);
+    z-index: 3;
+  }
+  
+  .header-bottom-actions-btn ion-icon {
+    color: hsl(0, 0%, 10%);
+    font-size: 20px;
+    margin-inline: auto;
+    margin-bottom: 5px;
+    --ionicon-stroke-width: 40px;
+    transition: var(--transition);
+  }
+  
+  .header-bottom-actions-btn:is(:hover, :focus) ion-icon {
+    color: var(--orange);
+  }
+  
+  .header-bottom-actions-btn span {
+    color: var(--cadet);
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-7);
+    font-weight: var(--fw-500);
+  }
+  
+  /* DASHBOARD STYLES */
+  .dashboard {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 240px;
+    background-color: var(--dark-jungle-green);
+    color: white;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar-header img {
+    width: 50px;
+  }
+  
+  .sidebar-header h2 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-menu li {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar-menu ion-icon {
+    margin-right: 10px;
+    font-size: 20px;
+    color: var(--yellow-green);
+  }
+  
+  .sidebar-menu a:hover {
+    color: var(--orange);
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: var(--cultured-2);
+    overflow-y: auto;
+  }
+  
+  .profile-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .profile-card {
+    background-color: var(--cultured-1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .upload-btn {
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: inherit;
+  }
+  
+  .upload-btn:hover {
+    background-color: var(--dark-jungle-green);
+  }
+  
+  .stats-card {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 340px);
+  }
+  
+  .stat-item {
+    background-color: var(--cultured-1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+  }
+  
+  .stat-item h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: var(--fw-600);
+  }
+  
+ /* Adjust the tracker section to use vertical lines */
+.tracker-section {
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow-2);
+}
+
+.carbon-footprint {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Align items at the bottom */
+}
+
+.footprint-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footprint-item span {
+    font-size: var(--fs-6);
+    color: var(--black);
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    width: 20px;
+    background-color: var(--green);
+    border-radius: 5px;
+    transition: height 0.3s ease;
+}
+
+/* Specific heights for each progress bar */
+.footprint-item[data-progress="transportation"] .progress-bar {
+    height: 80px;
+}
+
+.footprint-item[data-progress="energy"] .progress-bar {
+    height: 50px;
+}
+
+.footprint-item[data-progress="planting"] .progress-bar {
+    height: 100px;
+}
+
+/* Adding a hover effect */
+.progress-bar:hover {
+    background-color: var(--orange);
+    transition: background-color 0.3s ease;
+}
+
+  /* Proposals Section */
+  .proposals-section {
+    background-color: var(--cultured-1);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .proposals-section h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: var(--fw-600);
+  }
+  
+  .proposal-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .proposal-item {
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--green);
+  }
+  
+  .proposal-item h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: var(--fw-600);
+  }
+  
+  .status {
+    font-weight: bold;
+  }
+  
+  .status.success {
+    color: var(--green);
+  }
+  
+  .status.pending {
+    color: var(--orange);
+  }
+  
+  .status.failed {
+    color: var(--raisin-black-2);
+  }
+  
+
+  /* Adjust the sidebar background and text color */
+.sidebar {
+    background-color: var(--white); /* Lighter background */
+    color: var(--black); /* Black text color */
+    padding: 20px;
+}
+
+.sidebar-header h2 {
+    color: var(--orange); /* Orange text for header */
+    font-size: var(--fs-4);
+}
+
+.sidebar-menu a {
+    color: var(--orange); /* Orange color for menu items */
+    font-size: var(--fs-5);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-menu a ion-icon {
+    color: var(--orange);
+    margin-right: 10px;
+}
+
+.sidebar-menu a:hover {
+    color: var(--green); /* Green on hover */
+}
+
+/* Adjust the main content area */
+.main-content {
+    background-color: var(--alice-blue); /* Very light background */
+    padding: 30px;
+    flex-grow: 1;
+}
+
+/* Profile Card Adjustments */
+.profile-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-2);
+}
+
+.profile-card h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: var(--fs-5); /* Smaller font size */
+    color: var(--black);
+    margin-top: 10px;
+}
+
+.profile-card .upload-btn {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.profile-card .upload-btn:hover {
+    background-color: var(--green); /* Change to green on hover */
+}
+
+.edit-name-btn, .save-name-btn {
+    color: var(--orange);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    font-size: var(--fs-6);
+    text-decoration: underline;
+}
+
+.edit-name-btn:hover, .save-name-btn:hover {
+    color: var(--green);
+}
+
+/* Adjust other sections to match */
+.stats-card {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.stat-item {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-2);
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.stat-item h4 {
+    font-size: var(--fs-5);
+    color: var(--black);
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    font-size: var(--fs-3);
+    color: var(--orange); /* Use orange for numbers */
+}
+
+.stat-item:last-child {
+    margin-right: 0;
+}
+
+.tracker-section, .proposals-section {
+    margin-top: 40px;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-2);
+}
+
+.tracker-section h3, .proposals-section h3 {
+    font-size: var(--fs-4);
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.proposal-item {
+    padding: 10px;
+    background-color: var(--alice-blue);
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.proposal-item h4 {
+    font-size: var(--fs-5);
+    color: var(--black);
+    margin-bottom: 5px;
+}
+
+.proposal-item .status {
+    font-size: var(--fs-6);
+}
+
+.status.success {
+    color: var(--green);
+}
+
+.status.pending {
+    color: var(--orange);
+}
+
+.status.failed {
+    color: var(--red);
+}

@@ -1,0 +1,112 @@
+/* Reset some basic styles */
+body, h1, h2, h3, p, ul, ol, li, a, img, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General body styles */
+body {
+  font-family: var(--ff-nunito-sans);
+  background-color: var(--alice-blue);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header styles */
+.header {
+  background-color: var(--white); 
+}
+
+.header-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Footer styles */
+.footer {
+  margin-top: auto; /* Push footer to bottom */
+}
+
+.footer-bottom {
+  background-color: var(--raisin-black-2);
+}
+
+/* Login wrapper styles */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  flex: 1;
+}
+
+/* Login container with form and image */
+.login-container {
+  display: flex;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Form box styles */
+.form-box {
+  padding: 40px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box header {
+  font-size: var(--fs-2);
+  color: var(--dark-jungle-green);
+  margin-bottom: 10px;
+}
+
+.form-box p {
+  font-size: var(--fs-5);
+  color: var(--cadet);
+  margin-bottom: 30px;
+}
+
+.internet-identity-btn {
+  background-color: var(--orange);
+  color: var(--white);
+  padding: 15px 20px;
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.internet-identity-btn:hover {
+  background-color: hsl(9, 100%, 55%);
+}
+
+/* Image box styles */
+.image-box {
+  width: 50%;
+  background: var(--alice-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.image-box img {
+  max-width: 100%;
+  border-radius: 12px;
+}

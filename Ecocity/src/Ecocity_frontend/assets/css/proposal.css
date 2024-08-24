@@ -1,0 +1,183 @@
+/* Global settings */
+body {
+  background-color: hsl(0, 0%, 96%); /* Light grey background */
+  font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Proposal Section and Form Styling */
+.proposal-section {
+  padding: 150px 0 50px 0;
+}
+
+.proposal-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 30px;
+  box-shadow: var(--shadow-1);
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: var(--fw-600);
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--cadet);
+  border-radius: 8px;
+  font-size: var(--fs-5);
+}
+
+.btn {
+  padding: 12px 20px;
+  background-color: var(--orange);
+  color: var(--white);
+  font-weight: var(--fw-600);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  margin: 10px 5px;
+}
+
+.btn:hover {
+  background-color: hsl(9, 100%, 55%);
+}
+
+/* Step Progress Styling */
+.step-progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step .icon {
+  background-color: var(--orange);
+  color: var(--white);
+  border-radius: 50%;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  font-size: 24px;
+}
+
+.step .icon:hover {
+  transform: translateY(-3px);
+}
+
+.step.active .icon {
+  background-color: var(--green);
+}
+
+.step p {
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-600);
+}
+
+/* Proposal Summary Styling */
+#proposal-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-1);
+}
+
+.proposal-detail {
+  flex: 1 1 45%; /* Two items per row */
+  margin-bottom: 20px;
+}
+
+.proposal-detail strong {
+  font-weight: 600;
+  color: #333;
+  margin-right: 10px;
+}
+
+.proposal-detail span {
+  color: #555;
+}
+
+/* Image Summary Styling */
+#proposal-image-summary img {
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%; /* Full width */
+  text-align: center;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #e64a19;
+}
+
+/* Rounded Inputs & Buttons */
+.form-input {
+  border-radius: 12px; /* More rounded corners */
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Align Next and Previous on the same line */
+  margin-top: 20px;
+}
+
+/* Country list dropdown styling */
+.country-list {
+  position: absolute;
+  max-height: 150px;
+  overflow-y: auto;
+  width: 100%; /* Match the width of the input */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for dropdown */
+  padding: 0; /* Remove any padding */
+  border: none; /* Ensure no border is shown */
+}
+
+.country-list li {
+  padding: 10px;
+  cursor: pointer;
+  list-style: none; /* Remove bullet points */
+}
+
+.country-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.country-list li:last-child {
+  border-bottom: none;
+}

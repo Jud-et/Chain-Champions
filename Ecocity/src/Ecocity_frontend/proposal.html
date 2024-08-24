@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoCity - Submit Your Proposal</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/ecocity-logo.png" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/proposal.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <ul class="header-top-list">
+          <li>
+            <a href="mailto:info@ecocity.com" class="header-top-link">
+              <ion-icon name="mail-outline"></ion-icon>
+              <span>info@ecocity.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="header-top-link">
+              <ion-icon name="location-outline"></ion-icon>
+              <address>Nairobi, Kenya</address>
+            </a>
+          </li>
+        </ul>
+
+        <div class="wrapper">
+          <ul class="header-top-social-list">
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-top-social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="./assets/images/ecocity-logo.png" alt="EcoCity logo">
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="index.html" class="logo">
+              <img src="./assets/images/ecocity-logo.png" alt="EcoCity logo">
+            </a>
+
+            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+          </div>
+
+          <div class="navbar-bottom">
+            <ul class="navbar-list">
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+              </li>
+              <li>
+                <a href="proposal.html" class="navbar-link" data-nav-link>Proposals</a>
+              </li>
+              <li>
+                <a href="vote.html" class="navbar-link" data-nav-link>Vote</a>
+              </li>
+              <li>
+                <a href="dashboard.html" class="navbar-link" data-nav-link>Dashboard</a>
+              </li>
+              <li>
+                <a href="#account" class="navbar-link" data-nav-link>Account</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+
+
+        <div class="header-bottom-actions">
+          <button class="header-bottom-actions-btn" onclick="location.href='proposal.html'" aria-label="Submit Proposal">
+            <ion-icon name="document-text-outline"></ion-icon>
+            <span>Submit Proposal</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" onclick="location.href='AI.html'" aria-label="AI Chatbot">
+            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+            <span>AI Chatbot</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" onclick="location.href='vote.html'" aria-label="Vote">
+            <ion-icon name="thumbs-up-outline"></ion-icon>
+            <span>Vote</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" onclick="location.href='login.html'" aria-label="Login">
+            <ion-icon name="person-outline"></ion-icon>
+            <span>Login</span>
+          </button>
+
+          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+            <span>Menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <article>
+       <!-- HERO -->
+       <section class="hero" id="home">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">
+              <ion-icon name="globe"></ion-icon>
+              <span>Shape the Future of Your City</span>
+            </p>
+
+            <h2 class="h1 hero-title">Why Your<br>Proposal is Important</h2>
+
+            <p class="hero-text">
+              Your voice matters in making our cities greener, more sustainable,
+              and better for everyone. By submitting your proposal, you are contributing to the community-driven development of our urban environment. This is your chance to share innovative ideas, address pressing challenges,
+              and collaborate with others who are equally passionate about the future of our cities.
+            </p>
+
+            <button class="btn" onclick="location.href='proposal.html'">Scrolldown</button>
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./assets/images/submitworkbig.png" alt="Eco-friendly city" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+      <section class="proposal-section">
+        <div class="container">
+      
+          <!-- Step Progress -->
+          <div class="step-progress">
+            <div class="step active" id="step-1">
+              <div class="icon">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+              <p>Set Up Location</p>
+            </div>
+            <div class="step" id="step-2">
+              <div class="icon">
+                <ion-icon name="create-outline"></ion-icon>
+              </div>
+              <p>Write Your Proposal</p>
+            </div>
+            <div class="step" id="step-3">
+              <div class="icon">
+                <ion-icon name="image-outline"></ion-icon>
+              </div>
+              <p>Upload an Image</p>
+            </div>
+            <div class="step" id="step-4">
+              <div class="icon">
+                <ion-icon name="checkmark-done-outline"></ion-icon>
+              </div>
+              <p>Confirm and Submit</p>
+            </div>
+          </div>
+
+          <!-- Form Content -->
+          <form action="#" method="post" class="proposal-form" id="proposalForm">
+
+            <!-- Step 1 -->
+            <div class="form-step" id="form-step-1">
+              <div class="form-group">
+                <label for="county">Country:</label>
+                <input type="text" id="country" name="country" class="form-input" placeholder="Enter your county" required>
+              </div>
+
+              <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" class="form-input" placeholder="Enter your location" required>
+              </div>
+
+              <div class="form-group">
+                <label for="resident-area">Resident Area:</label>
+                <input type="text" id="resident-area" name="resident-area" class="form-input" placeholder="Enter your resident area" required>
+              </div>
+
+              <button type="button" class="btn next-btn" onclick="nextStep(2)">Next</button>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="form-step" id="form-step-2" style="display:none;">
+              <div class="form-group">
+                <label for="proposal-title">Proposal Title:</label>
+                <input type="text" id="proposal-title" name="proposal-title" class="form-input" placeholder="Enter your proposal title" required>
+              </div>
+
+              <div class="form-group">
+                <label for="proposal-details">Proposal Details:</label>
+                <textarea id="proposal-details" name="proposal-details" class="form-input" rows="6" placeholder="Describe your proposal" required></textarea>
+              </div>
+
+              <button type="button" class="btn next-btn" onclick="nextStep(3)">Next</button>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="form-step" id="form-step-3" style="display:none;">
+              <div class="form-group">
+                <label for="proposal-image">Upload an Image:</label>
+                <input type="file" id="proposal-image" name="proposal-image" class="form-input" required>
+              </div>
+
+          
+              <button type="button" class="btn next-btn" onclick="nextStep(4)">Next</button>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="form-step" id="form-step-4" style="display:none;">
+              <h3>Confirm and Submit</h3>
+              <p>Please review your proposal details before submitting.</p>
+              <div id="proposal-summary">
+                  <p><strong>Proposal ID:</strong> <span id="proposal-id-summary"></span></p>
+                  <p><strong>Title:</strong> <span id="proposal-title-summary"></span></p>
+                  <p><strong>Details:</strong> <span id="proposal-details-summary"></span></p>
+                  <p><strong>Location:</strong> <span id="proposal-location-summary"></span></p>
+                  <p><strong>Submission Time:</strong> <span id="proposal-submission-time-summary"></span></p>
+                  <p><strong>Uploaded Image:</strong><br> <img id="proposal-image-summary" src="" alt="Uploaded Proposal Image" style="max-width: 100%; height: auto;"></p>
+              </div>
+              <button type="submit" class="btn submit-btn">Submit Proposal</button>
+          </div>
+
+          
+
+          </form>
+
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="container">
+
+            <div class="footer-brand">
+
+              <a href="#" class="logo">
+                <img src="./assets/images/ecocity-logo.png" alt="EcoCity logo">
+              </a>
+
+              <p class="section-text">
+                EcoCity is committed to empowering communities to create sustainable, thriving urban environments.
+              </p>
+
+              <ul class="contact-list">
+                <li>
+                  <a href="#" class="contact-link">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <address>Nairobi, Kenya</address>
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+254712345678" class="contact-link">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <span>+254-712345678</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:contact@ecocity.com" class="contact-link">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <span>contact@ecocity.com</span>
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="social-list">
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+
+            <div class="footer-link-box">
+              <ul class="footer-list">
+                <li>
+                  <p class="footer-list-title">Company</p>
+                </li>
+                <li>
+                  <a href="#" class="footer-link">About</a>
+                </li>
+                <li>
+                  <a href="#" class="footer-link">Blog</a>
+                </li>
+                <li>
+                  <a href="#" class="footer-link">Contact us</a>
+                </li>
+              </ul>
+
+              <ul class="footer-list">
+                <li>
+                  <p class="footer-list-title">Support</p>
+                </li>
+                <li>
+                  <a href="#" class="footer-link">Login</a>
+                </li>
+                <li>
+                  <a href="#" class="footer-link">My account</a>
+                </li>
+                <li>
+                  <a href="#" class="footer-link">FAQ</a>
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="container">
+            <p class="copyright">
+              &copy; 2024 EcoCity. All Rights Reserved | Designed by ChainChampions
+            </p>
+          </div>
+        </div>
+
+      </footer>
+
+    </article>
+  </main>
+
+  <!-- custom js link -->
+  <script src="./assets/js/proposal.js"></script>
+
+  <!-- ionicon link -->
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    window.embeddedChatbotConfig = {
+    chatbotId: "kxpQDUENXQezTwswVKJtp",
+    domain: "www.chatbase.co"
+    }
+    </script>
+    <script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="kxpQDUENXQezTwswVKJtp"
+    domain="www.chatbase.co"
+    defer>
+    </script>
+
+</body>
+
+</html>
