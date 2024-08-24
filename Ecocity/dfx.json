@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "Ecocity_backend": {
+      "main": "src/Ecocity_backend/main.mo",
+      "type": "motoko"
+    },
+    "Ecocity_frontend": {
+      "dependencies": [
+        "Ecocity_backend"
+      ],
+      "source": [
+        "src/Ecocity_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "Ecocity_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
