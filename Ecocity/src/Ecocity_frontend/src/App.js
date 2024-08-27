@@ -1,6 +1,5 @@
-import { html, render } from 'lit-html';
-import { Ecocity_backend } from 'declarations/Ecocity_backend';
 import logo from './logo2.svg';
+import { Ecocity_backend } from '../../declarations/Ecocity_backend';
 
 class App {
   greeting = '';

@@ -8,6 +8,9 @@
       "dependencies": [
         "Ecocity_backend"
       ],
+      "frontend": {
+        "entrypoint": "src/Ecocity_frontend/src/index.html"
+      },
       "source": [
         "src/Ecocity_frontend/dist"
       ],
@@ -15,12 +18,11 @@
       "workspace": "Ecocity_frontend"
     }
   },
-  "defaults": {
+ "defaults": {
     "build": {
       "args": "",
       "packtool": ""
     }
   },
-  "output_env_file": ".env",
   "version": 1
 }
