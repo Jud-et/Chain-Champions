@@ -5,18 +5,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoCity - Your Vote Counts</title>
+  <title>EcoCity - Login</title>
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/ecocity-logo.png" type="image/svg+xml">
+  <link rel="shortcut icon" href="src/assets/images/ecocity-logo.png" type="image/svg+xml">
 
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/login.css">
+  <link rel="stylesheet" href="src/assets/css/style.css">
+  <link rel="stylesheet" href="src/assets/css/login.css">
   <!-- 
     - google font link
   -->
@@ -89,7 +89,7 @@
       <div class="container">
 
         <a href="index.html" class="logo">
-          <img src="./assets/images/ecocity-logo.png" alt="EcoCity logo">
+          <img src="src/assets/images/ecocity-logo.png" alt="EcoCity logo">
         </a>
 
         <nav class="navbar" data-navbar>
@@ -97,7 +97,7 @@
           <div class="navbar-top">
 
             <a href="index.html" class="logo">
-              <img src="./assets/images/ecocity-logo.png" alt="EcoCity logo">
+              <img src="src/assets/images/ecocity-logo.png" alt="EcoCity logo">
             </a>
 
             <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
@@ -135,34 +135,17 @@
         </nav>
 
         <div class="header-bottom-actions">
-
-          <button class="header-bottom-actions-btn" onclick="location.href='proposal.html'" aria-label="Submit Proposal">
-            <ion-icon name="document-text-outline"></ion-icon>
-            <span>Submit Proposal</span>
-          </button>
-
-          <button class="header-bottom-actions-btn"  onclick="location.href='AI.html'" aria-label="AI Chatbot">
-            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-            <span>AI Chatbot</span>
-          </button>
-
-          <button class="header-bottom-actions-btn" onclick="location.href='vote.html'" aria-label="Vote">
-            <ion-icon name="thumbs-up-outline"></ion-icon>
-            <span>Vote</span>
-          </button>
-
-          <button class="header-bottom-actions-btn"  onclick="location.href='login.html'" aria-label="Login">
-            <ion-icon name="person-outline"></ion-icon>
-            <span>Login</span>
-          </button>
-
+          <a href="index.html" aria-label="Submit Proposal">Home</a>
+          <a href="proposal.html" aria-label="Submit Proposal">Proposal</a>
+          <a href="vote.html" aria-label="Submit Proposal">Dashboard</a>
+          <a href="vote.html" aria-label="Submit Proposal">Vote</a>
+          
           <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
             <ion-icon name="menu-outline"></ion-icon>
             <span>Menu</span>
           </button>
 
         </div>
-
       </div>
     </div>
 
@@ -181,7 +164,7 @@
         </button>
       </div>
       <div class="image-box">
-        <img src="./assets/images/Cleancity.png" alt="EcoCity Image">
+        <img src="src/assets/images/Cleancity.png" alt="EcoCity Image">
       </div>
     </div>
   </div>
@@ -195,7 +178,7 @@
             <div class="footer-brand">
 
               <a href="#" class="logo">
-                <img src="./assets/images/ecocity-logo.png" alt="EcoCity logo">
+                <img src="src/assets/images/ecocity-logo.png" alt="EcoCity logo">
               </a>
 
               <p class="section-text">
@@ -316,7 +299,7 @@
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/login.js"></script>
+  <script src="src/assets/js/login.js"></script>
 
   <!-- 
     - ionicon link

@@ -9,13 +9,13 @@
         "Ecocity_backend"
       ],
       "frontend": {
-        "entrypoint": "src/Ecocity_frontend/src/index.html"
+        "entrypoint": "src/Ecocity_frontend/index.html"
       },
       "source": [
-        "src/Ecocity_frontend/dist"
+        "src/Ecocity_frontend"
       ],
       "type": "assets",
-      "workspace": "Ecocity_frontend"
+      "workspace": "src/Ecocity_frontend"
     }
   },
  "defaults": {
