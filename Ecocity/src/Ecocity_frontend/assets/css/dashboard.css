@@ -546,3 +546,93 @@ body {
 }
 
 
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ff5e57;
+}
+
+.delete-btn i {
+    font-size: 20px;
+}
+
+
+
+.chat-container {
+    margin-right: 200px;
+    height: 100%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+   ;
+
+}
+
+.chat-message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e4e6eb;
+    max-width: 60%;
+}
+
+.chat-message.user {
+    background-color: #c1f0c1;
+    margin-left: auto;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+
+#message-input {
+    flex: 1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #f0f2f5;
+}
+
+#send-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#send-btn i {
+    font-size: 20px;
+}
+
+#send-btn:hover {
+    background-color: #45a049;
+}

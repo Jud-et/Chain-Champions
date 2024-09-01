@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/messages.css">
+    <title>EcoCity - Messages</title>
+</head>
+<body>
+    
+       
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class='bx bxs-leaf'></i>
+            <span class="text">EcoCity</span>
+        </a>
+        <ul class="side-menu top">
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="messages.html">
+                    <i class='bx bxs-chat'></i>
+                    <span class="text">Messages</span>
+                </a>
+            </li>
+            
+        </ul>
+    </section>
+    <!-- SIDEBAR -->
+
+    <!-- CONTENT -->
+    <section id="content">
+        <!-- NAVBAR -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <a href="#" class="notification">
+                <i class='bx bxs-bell'></i>
+                <span class="num">8</span>
+            </a>
+           
+        </nav>
+        <!-- NAVBAR -->
+
+
+    <!-- CONTENT -->
+    <section id="content">
+        <main>
+            <div class="chat-container">
+                <div class="chat-header">
+                   
+                    <h2>Chat Room</h2>
+                </div>
+                <div class="chat-box" id="chat-box">
+                    <!-- Static messages -->
+                    <div class="chat-message">
+                        Welcome to the EcoCity chat room! Chat with the community about ideas to better your city!
+                    </div>
+                    <div class="chat-message">
+                        Remember, your proposals are important to us. Don't hesitate to share your thoughts!
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="message-input" placeholder="Type your message..." autofocus>
+                    <button id="send-btn"><i class='bx bxs-send'></i></button>
+                </div>
+            </div>
+        </main>
+    </section>
+    <!-- CONTENT -->
+
+    <script src="assets/js/messages.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,3 +1,49 @@
+// js/script.js
+function loadPage(page) {
+  fetch(page)
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('dynamic-content').innerHTML = data;
+          updatePageTitle(page);
+          window.history.pushState({ page: page }, '', page);
+      })
+      .catch(error => console.error('Error loading page:', error));
+}
+
+function updatePageTitle(page) {
+  let title;
+  switch (page) {
+      case 'pages/proposal.html':
+          title = 'EcoCity - Submit Your Proposal';
+          break;
+      case 'pages/vote.html':
+          title = 'EcoCity - Vote';
+          break;
+      case 'pages/dashboard.html':
+          title = 'EcoCity - Dashboard';
+          break;
+      case 'pages/login.html':
+          title = 'EcoCity - Account';
+          break;
+      default:
+          title = 'EcoCity - Empowering Communities';
+  }
+  document.title = title;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const path = window.location.pathname.split('/').pop();
+  const page = path === '' || path === 'index.html' ? 'index.html' : path;
+  loadPage(page);
+});
+
+window.onpopstate = function (event) {
+  if (event.state && event.state.page) {
+      loadPage(event.state.page);
+  }
+};
+
+
 'use strict';
 
 /**
@@ -49,3 +95,4 @@ window.addEventListener("scroll", function () {
   window.scrollY >= 400 ? header.classList.add("active")
     : header.classList.remove("active");
 }); 
+

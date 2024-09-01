@@ -1,49 +1,155 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const proposalList = document.getElementById('proposal-list');
-    const proposalDetailsSection = document.getElementById('proposal-details');
+    loadProposals();
 
-    function showProposalDetails(id, title, details, location, imageSrc) {
-        document.getElementById('proposal-id').textContent = id;
-        document.getElementById('proposal-title').textContent = title;
-        document.getElementById('proposal-details').textContent = details;
-        document.getElementById('proposal-location').textContent = location;
-        document.getElementById('proposal-image').src = imageSrc;
+    const proposalTableBody = document.getElementById('proposal-table-body');
+    const proposalDetailsDiv = document.getElementById('proposal-details');
 
-        // Show the details section
-        proposalDetailsSection.style.display = 'block';
-    }
+    // Event delegation for the entire table body
+    proposalTableBody.addEventListener('click', function (event) {
+        if (event.target.classList.contains('view-btn')) {
+            const targetRow = event.target.closest('tr');
+            if (targetRow) {
+                const proposalId = targetRow.dataset.id;
+                const proposal = getProposalById(proposalId);
 
-    function populateProposalList(proposals) {
+                displayProposalDetails(proposal);
+            }
+        }
+    });
+
+    function loadProposals() {
+        const proposals = JSON.parse(localStorage.getItem('proposals')) || [];
+        const proposalTableBody = document.getElementById('proposal-table-body');
+        proposalTableBody.innerHTML = ''; // Clear existing rows
+
         proposals.forEach(proposal => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${proposal.title}`;
-            listItem.onclick = function () {
-                showProposalDetails(proposal.id, proposal.title, proposal.details, proposal.location, proposal.image);
-            };
-            proposalList.appendChild(listItem);
+            const row = document.createElement('tr');
+            row.dataset.id = proposal.id;
+
+            row.innerHTML = `
+                <td>${proposal.title}</td>
+                <td>${new Date(proposal.submissionTime).toLocaleDateString()}</td>
+                <td>${proposal.location}</td>
+                <td><button class="btn view-btn">View & Vote</button></td>
+            `;
+
+            proposalTableBody.appendChild(row);
         });
     }
 
-    // Sample data for proposals - In real implementation, this data could be fetched from a server
-    const sampleProposals = [
-        { id: 'PROPOSAL-254-ABC123', title: '', details: 'A proposal to increase the use of solar energy in residential areas.', location: 'Nairobi, Kenya', image: 'proposal-image.jpg' },
-        { id: 'PROPOSAL-254-DEF456', title: 'Ut', details: 'Expanding community gardens across the city.', location: 'Kisumu, Kenya', image: 'gardening-image.jpg' }
-    ];
-
-    populateProposalList(sampleProposals);
-
-    function vote(option) {
-        alert(`You voted: ${option}`);
-        // Logic to handle voting could be added here, like sending data to a server or updating the UI
+    function getProposalById(id) {
+        const proposals = JSON.parse(localStorage.getItem('proposals')) || [];
+        return proposals.find(proposal => proposal.id === id);
     }
 
-    document.getElementById('poll-yes').addEventListener('click', function () {
-        vote('Yes');
+    function displayProposalDetails(proposal) {
+        if (proposal) {
+            document.getElementById('proposal-id').textContent = proposal.id;
+            document.getElementById('proposal-title').textContent = proposal.title;
+            document.getElementById('proposal-description').textContent = proposal.details;
+            document.getElementById('proposal-location').textContent = proposal.location;
+         
+
+            proposalDetailsDiv.style.display = 'block';
+        }
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    loadProposals();
+
+    const proposalTableBody = document.getElementById('proposal-table-body');
+    const proposalDetailsDiv = document.getElementById('proposal-details');
+    const voteCountDisplay = document.getElementById('yes-vote-count');
+    let yesVoteCount = parseInt(localStorage.getItem('yesVoteCount')) || 0;
+
+    // Initialize Yes Vote Counter
+    voteCountDisplay.textContent = yesVoteCount;
+
+    // Modal Elements
+    const modal = document.getElementById('voteModal');
+    const closeModalBtn = document.querySelector('.modal .close');
+    const voteResultMessage = document.getElementById('vote-result-message');
+
+    // Close modal
+    closeModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
     });
-    document.getElementById('poll-no').addEventListener('click', function () {
-        vote('No');
+
+    // Event delegation for the entire table body
+    proposalTableBody.addEventListener('click', function (event) {
+        if (event.target.classList.contains('view-btn')) {
+            const targetRow = event.target.closest('tr');
+            if (targetRow) {
+                const proposalId = targetRow.dataset.id;
+                const proposal = getProposalById(proposalId);
+
+                displayProposalDetails(proposal);
+            }
+        }
     });
-    document.getElementById('poll-unsure').addEventListener('click', function () {
-        vote('Not Sure');
+
+    document.querySelector('.vote-btn').addEventListener('click', function () {
+        const selectedVote = document.querySelector('input[name="vote"]:checked').value;
+
+        if (selectedVote === 'yes') {
+            yesVoteCount += 1;
+            localStorage.setItem('yesVoteCount', yesVoteCount);
+            voteCountDisplay.textContent = yesVoteCount;
+        }
+
+        voteResultMessage.textContent = `You voted: ${selectedVote}. Yes votes: ${yesVoteCount}`;
+        modal.style.display = 'block';
     });
+
+    // Handle delete vote
+    document.querySelector('.delete-vote-btn').addEventListener('click', function () {
+        const selectedVote = document.querySelector('input[name="vote"]:checked').value;
+
+        if (selectedVote === 'yes' && yesVoteCount > 0) {
+            yesVoteCount -= 1;
+            localStorage.setItem('yesVoteCount', yesVoteCount);
+            voteCountDisplay.textContent = yesVoteCount;
+        }
+
+        voteResultMessage.textContent = `Vote deleted. Yes votes: ${yesVoteCount}`;
+        modal.style.display = 'block';
+    });
+
+    function loadProposals() {
+        const proposals = JSON.parse(localStorage.getItem('proposals')) || [];
+        const proposalTableBody = document.getElementById('proposal-table-body');
+        proposalTableBody.innerHTML = ''; // Clear existing rows
+
+        proposals.forEach(proposal => {
+            const row = document.createElement('tr');
+            row.dataset.id = proposal.id;
+
+            row.innerHTML = `
+                <td>${proposal.title}</td>
+                <td>${new Date(proposal.submissionTime).toLocaleDateString()}</td>
+                <td>${proposal.location}</td>
+                <td><button class="btn view-btn">View & Vote</button></td>
+            `;
+
+            proposalTableBody.appendChild(row);
+        });
+    }
+
+    function getProposalById(id) {
+        const proposals = JSON.parse(localStorage.getItem('proposals')) || [];
+        return proposals.find(proposal => proposal.id === id);
+    }
+
+    function displayProposalDetails(proposal) {
+        if (proposal) {
+            document.getElementById('proposal-id').textContent = proposal.id;
+            document.getElementById('proposal-title').textContent = proposal.title;
+            document.getElementById('proposal-description').textContent = proposal.details;
+            document.getElementById('proposal-location').textContent = proposal.location;
+
+            proposalDetailsDiv.style.display = 'block';
+        }
+    }
 });

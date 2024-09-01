@@ -207,3 +207,25 @@ document.addEventListener('DOMContentLoaded', function () {
     window.nextStep = nextStep;
     window.prevStep = prevStep;
 });
+
+
+function loadProposals() {
+    const proposals = JSON.parse(localStorage.getItem('proposals')) || [];
+    const proposalsTableBody = document.querySelector('.order tbody');
+    proposalsTableBody.innerHTML = ''; // Clear existing rows
+
+    proposals.forEach(proposal => {
+        const row = document.createElement('tr');
+        
+        row.innerHTML = `
+            <td>${proposal.title}</td>
+            <td>${new Date(proposal.submissionTime).toLocaleDateString()}</td>
+            <td><span class="status pending">Pending</span></td>
+        `;
+        
+        proposalsTableBody.appendChild(row);
+    });
+}
+
+// Call loadProposals when the page is loaded
+document.addEventListener('DOMContentLoaded', loadProposals);

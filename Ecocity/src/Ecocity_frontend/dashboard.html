@@ -11,7 +11,6 @@
 </head>
 <body>
     
-
     <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="#" class="brand">
@@ -20,51 +19,20 @@
         </a>
         <ul class="side-menu top">
             <li class="active">
-                <a href="#">
+                <a href="dashboard.html">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class='bx bxs-book'></i>
-                    <span class="text">My Proposals</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-star'></i>
-                    <span class="text">Tokens</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-tree'></i>
-                    <span class="text">Carbon Footprint</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
+                <a href="messages.html">
                     <i class='bx bxs-chat'></i>
                     <span class="text">Messages</span>
                 </a>
             </li>
-            <ul>
-                <li>
-                    <a href="#">
-                        <i class='bx bxs-cog'></i>
-                        <span class="text">Settings</span>
-                    </a>
-                </li>
-            </ul>
-
         
-           
         </ul>
-        
     </section>
-
-         
     <!-- SIDEBAR -->
 
     <!-- CONTENT -->
@@ -87,7 +55,6 @@
                 <input type="file" id="upload-image" accept="image/*" style="display: none;">
                 <button class="upload-btn" onclick="document.getElementById('upload-image').click();">Profile</button>
             </a>
-              
         </nav>
         <!-- NAVBAR -->
 
@@ -112,21 +79,21 @@
                 <li>
                     <i class='bx bxs-calendar-check'></i>
                     <span class="text">
-                        <h3>12</h3>
+                        <h3 id="submitted-proposals-count">0</h3>
                         <p>Proposals Submitted</p>
                     </span>
                 </li>
                 <li>
                     <i class='bx bxs-check-circle'></i>
                     <span class="text">
-                        <h3>8</h3>
+                        <h3 id="successful-proposals-count">0</h3>
                         <p>Successful Proposals</p>
                     </span>
                 </li>
                 <li>
                     <i class='bx bxs-coin-stack'></i>
                     <span class="text">
-                        <h3>120</h3>
+                        <h3>0</h3>
                         <p>Tokens Earned</p>
                     </span>
                 </li>
@@ -144,24 +111,11 @@
                                 <th>Title</th>
                                 <th>Date Submitted</th>
                                 <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Green Energy Initiative</td>
-                                <td>01-10-2024</td>
-                                <td><span class="status completed">Approved</span></td>
-                            </tr>
-                            <tr>
-                                <td>Urban Gardening Project</td>
-                                <td>01-10-2024</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>City Clean-Up Drive</td>
-                                <td>01-10-2024</td>
-                                <td><span class="status failed">Failed</span></td>
-                            </tr>
+                        <tbody id="proposals-table-body">
+                            <!-- Proposals will be dynamically inserted here -->
                         </tbody>
                     </table>
                 </div>
